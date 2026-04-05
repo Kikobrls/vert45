@@ -7,6 +7,13 @@ export default function AdminDashboard() {
       <p className="text-gray-600 mb-8">Selamat datang di panel Admin. Pilih menu di bawah atau di navigasi atas untuk mengelola sistem.</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Link href="/admin/users" className="block group">
+          <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 group-hover:border-blue-500 transition-colors">
+            <h2 className="text-xl font-semibold text-gray-800 mb-2">👥 Manajemen Pengguna</h2>
+            <p className="text-gray-500 text-sm">Tambah akun baru, atur role (Admin/Atasan/User), dan lihat daftar semua pengguna di sistem.</p>
+          </div>
+        </Link>
+
         <Link href="/admin/settings" className="block group">
           <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 group-hover:border-blue-500 transition-colors">
             <h2 className="text-xl font-semibold text-gray-800 mb-2">⚙️ Pengaturan Sistem</h2>
