@@ -3,8 +3,8 @@
 import { useState } from 'react';
 
 export default function AdminPayrollPage() {
-  const [month, setMonth] = useState(new Date().getMonth() + 1);
-  const [year, setYear] = useState(new Date().getFullYear());
+  const [month, setMonth] = useState<number | ''>(new Date().getMonth() + 1);
+  const [year, setYear] = useState<number | ''>(new Date().getFullYear());
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
 
@@ -40,7 +40,8 @@ export default function AdminPayrollPage() {
           <label className="block text-sm font-medium mb-1">Bulan</label>
           <input 
             type="number" min="1" max="12"
-            value={month} onChange={e => setMonth(parseInt(e.target.value))}
+            value={month} 
+            onChange={e => setMonth(e.target.value === '' ? '' : parseInt(e.target.value))}
             className="w-full px-4 py-2 border rounded-lg focus:ring-blue-500 outline-none" 
           />
         </div>
@@ -48,7 +49,8 @@ export default function AdminPayrollPage() {
           <label className="block text-sm font-medium mb-1">Tahun</label>
           <input 
             type="number" min="2000"
-            value={year} onChange={e => setYear(parseInt(e.target.value))}
+            value={year} 
+            onChange={e => setYear(e.target.value === '' ? '' : parseInt(e.target.value))}
             className="w-full px-4 py-2 border rounded-lg focus:ring-blue-500 outline-none" 
           />
         </div>
